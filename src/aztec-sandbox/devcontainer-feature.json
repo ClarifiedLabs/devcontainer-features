@@ -1,0 +1,27 @@
+{
+    "id": "aztec-sandbox",
+    "name": "Aztec Sandbox",
+    "version": "1.0.1",
+    "description": "Aztec Sandbox development environment (https://docs.aztec.network/developers/getting_started/quickstart)",
+    "documentationURL": "https://github.com/ClarifiedLabs/devcontainer/features/tree/main/src/aztec-sandbox",
+    "dependsOn": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+      "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "options": {
+        "autorun": {
+            "type": "boolean",
+            "description": "Automatically Run `aztec sandbox` after the container starts",
+            "default": true
+          }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "noir-lang.vscode-noir"
+            ]
+        }
+    },
+    "onCreateCommand": "aztec-up",
+    "postStartCommand": "test -f ~/.aztec-sandbox-autorun && docker compose -f ~/.aztec/docker-compose.yml -p sandbox up -d"
+}

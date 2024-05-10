@@ -1,0 +1,18 @@
+{
+    "autorun-true": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "features": {
+                "autorun": true
+            }
+        }
+    },
+    "autorun-false": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "features": {
+                "autorun": true
+            }
+        }
+    }
+}
